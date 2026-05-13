@@ -1,0 +1,190 @@
+
+====================================================
+STEP 1 : CREATE FOLDER
+====================================================
+
+Create folder:
+
+jquery-mobile-practical
+
+
+====================================================
+STEP 2 : CREATE FILE
+====================================================
+
+Create file:
+
+index.html
+
+
+====================================================
+STEP 3 : OPEN IN VS CODE
+====================================================
+
+Open folder in VS Code
+
+
+====================================================
+STEP 4 : WRITE CODE
+====================================================
+
+Paste this code inside index.html
+
+
+----------------------------------------------------
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>jQuery Mobile Website</title>
+
+
+    <!-- jQuery Mobile CSS -->
+
+    <link rel="stylesheet"
+    href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+
+    <!-- jQuery Library -->
+
+    <script
+    src="https://code.jquery.com/jquery-1.11.1.min.js">
+    </script>
+
+
+    <!-- jQuery Mobile JS -->
+
+    <script
+    src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js">
+    </script>
+
+</head>
+
+<body>
+
+
+
+<!-- HOME PAGE -->
+
+<div data-role="page" id="home">
+
+
+    <!-- HEADER -->
+
+    <div data-role="header">
+
+        <h1>My Mobile Website</h1>
+
+    </div>
+
+
+
+    <!-- MAIN CONTENT -->
+
+    <div role="main" class="ui-content">
+
+        <h2>Welcome Student</h2>
+
+        <p>This website is created using jQuery Mobile.</p>
+
+
+        <!-- BUTTON -->
+
+        <a href="#about"
+        class="ui-btn ui-btn-b">
+
+        About Page
+
+        </a>
+
+    </div>
+
+
+
+    <!-- FOOTER -->
+
+    <div data-role="footer">
+
+        <h4>WAD Practical</h4>
+
+    </div>
+
+</div>
+
+
+
+
+
+<!-- ABOUT PAGE -->
+
+<div data-role="page" id="about">
+
+
+    <!-- HEADER -->
+
+    <div data-role="header">
+
+        <h1>About</h1>
+
+    </div>
+
+
+
+    <!-- MAIN CONTENT -->
+
+    <div role="main" class="ui-content">
+
+        <h3>About This Website</h3>
+
+        <p>Created using jQuery Mobile Framework.</p>
+
+
+        <!-- BUTTON -->
+
+        <a href="#home"
+        class="ui-btn ui-btn-a">
+
+        Go Back
+
+        </a>
+
+    </div>
+
+
+
+    <!-- FOOTER -->
+
+    <div data-role="footer">
+
+        <h4>Thank You</h4>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>
+
+
+----------------------------------------------------
+
+
+====================================================
+STEP 5 : RUN PROJECT
+====================================================
+
+Method 1:
+
+Double click index.html
+
+
+OR
+
+
+Method 2:
+
+Use Live Server in VS Code
