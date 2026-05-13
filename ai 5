@@ -1,0 +1,114 @@
+# ====================================================
+# AI PRACTICAL 5
+# Tic Tac Toe Game
+# ====================================================
+
+
+# STEP 1 : CREATE BOARD
+
+board = [' ' for x in range(9)]
+
+
+
+# STEP 2 : DISPLAY BOARD
+
+def print_board():
+
+    print()
+
+    print(board[0] + " | " + board[1] + " | " + board[2])
+
+    print("--|---|--")
+
+    print(board[3] + " | " + board[4] + " | " + board[5])
+
+    print("--|---|--")
+
+    print(board[6] + " | " + board[7] + " | " + board[8])
+
+    print()
+
+
+
+# STEP 3 : CHECK WINNER
+
+def check_winner(player):
+
+    win_positions = [
+
+        [0,1,2],
+
+        [3,4,5],
+
+        [6,7,8],
+
+        [0,3,6],
+
+        [1,4,7],
+
+        [2,5,8],
+
+        [0,4,8],
+
+        [2,4,6]
+
+    ]
+
+
+    for pos in win_positions:
+
+        if board[pos[0]] == player and \
+           board[pos[1]] == player and \
+           board[pos[2]] == player:
+
+            return True
+
+    return False
+
+
+
+# STEP 4 : GAME LOOP
+
+current_player = 'X'
+
+
+for turn in range(9):
+
+    print_board()
+
+    move = int(input("Player " + current_player + " Enter Position (0-8): "))
+
+
+    if board[move] == ' ':
+
+        board[move] = current_player
+
+
+        if check_winner(current_player):
+
+            print_board()
+
+            print("Player", current_player, "Wins!")
+
+            break
+
+
+        if current_player == 'X':
+
+            current_player = 'O'
+
+        else:
+
+            current_player = 'X'
+
+
+    else:
+
+        print("Position Already Filled")
+
+
+else:
+
+    print_board()
+
+    print("Match Draw")
