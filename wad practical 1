@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+    body { background: #f4f6f9; }
+
+    .sidebar {
+      width: 220px;
+      min-height: 100vh;
+      background: #343a40;
+      position: fixed;
+      top: 0; left: 0;
+      padding-top: 20px;
+    }
+    .sidebar h4 {
+      color: #fff;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .sidebar a {
+      display: block;
+      color: #ccc;
+      padding: 12px 20px;
+      text-decoration: none;
+    }
+    .sidebar a:hover { background: #495057; color: #fff; }
+
+    .main {
+      margin-left: 220px;
+      padding: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="sidebar">
+  <h4>Admin Panel</h4>
+  <a href="#">Dashboard</a>
+  <a href="#">Students</a>
+  <a href="#">Courses</a>
+  <a href="#">Exams</a>
+  <a href="#">Orders</a>
+  <a href="#">Settings</a>
+</div>
+
+<div class="main">
+  <h3 class="mb-4">Dashboard</h3>
+
+  <div class="row g-3 mb-4">
+    <div class="col-md-3">
+      <div class="card text-white bg-primary">
+        <div class="card-body">
+          <h5 class="card-title">Students</h5>
+          <h2>3,482</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card text-white bg-success">
+        <div class="card-body">
+          <h5 class="card-title">Courses</h5>
+          <h2>124</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card text-white bg-warning">
+        <div class="card-body">
+          <h5 class="card-title">Exams</h5>
+          <h2>58</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card text-white bg-danger">
+        <div class="card-body">
+          <h5 class="card-title">Revenue</h5>
+          <h2>2.4L</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Recent Orders</h5>
+      <table class="table table-bordered">
+        <thead class="table-dark">
+          <tr>
+            <th>#</th>
+            <th>Student</th>
+            <th>Course</th>
+            <th>Amount</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td><td>Atharva K.</td><td>Web Dev</td><td>2,499</td>
+            <td><span class="badge bg-success">Paid</span></td>
+          </tr>
+          <tr>
+            <td>2</td><td>Priya S.</td><td>Data Science</td><td>3,999</td>
+            <td><span class="badge bg-warning">Pending</span></td>
+          </tr>
+          <tr>
+            <td>3</td><td>Rahul M.</td><td>Java Spring</td><td>1,999</td>
+            <td><span class="badge bg-success">Paid</span></td>
+          </tr>
+          <tr>
+            <td>4</td><td>Sneha P.</td><td>AI & ML</td><td>4,999</td>
+            <td><span class="badge bg-danger">Failed</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
