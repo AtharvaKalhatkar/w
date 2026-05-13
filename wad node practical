@@ -1,0 +1,98 @@
+==========================
+1) CREATE FOLDER
+==========================
+
+Create folder:
+node-practical
+
+
+==========================
+2) OPEN TERMINAL
+==========================
+
+npm init -y
+
+
+==========================
+3) INSTALL EXPRESS
+==========================
+
+npm install express
+
+
+==========================
+4) CREATE FILES
+==========================
+
+server.js
+
+index.html
+
+
+==========================
+5) server.js
+==========================
+
+const express = require('express');
+
+const app = express();
+
+app.use(express.static(__dirname));
+
+app.listen(3000, () => {
+
+    console.log('Server Running');
+
+});
+
+
+==========================
+6) index.html
+==========================
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Node JS Practical</title>
+
+    <style>
+
+        body{
+            font-family:Arial;
+            text-align:center;
+            margin-top:100px;
+            background:#f2f2f2;
+        }
+
+        h1{
+            color:blue;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Welcome to Node JS Static Website</h1>
+
+    <p>This website is served using Node.js</p>
+
+</body>
+
+</html>
+
+
+==========================
+7) RUN PROJECT
+==========================
+
+node server.js
+
+
+==========================
+8) OPEN BROWSER
+==========================
+
+http://localhost:3000
