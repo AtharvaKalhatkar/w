@@ -1,0 +1,105 @@
+# ====================================================
+# AI PRACTICAL 4
+# Information Retrieval System using NLP (NLTK)
+# ====================================================
+
+
+# STEP 1 : INSTALL NLTK
+# Run only first time
+
+# pip install nltk
+
+
+
+# STEP 2 : IMPORT LIBRARIES
+
+import nltk
+
+from nltk.tokenize import word_tokenize
+
+from nltk.corpus import stopwords
+
+from collections import Counter
+
+from nltk import pos_tag
+
+
+
+# STEP 3 : DOWNLOAD NLTK DATA
+# Run only first time
+
+nltk.download('punkt')
+
+nltk.download('stopwords')
+
+nltk.download('averaged_perceptron_tagger')
+
+
+
+# STEP 4 : INPUT TEXT
+
+text = "Artificial Intelligence is changing the world with smart technology"
+
+
+
+print("Original Text:\n")
+
+print(text)
+
+
+
+# ====================================================
+# a) TEXT TOKENIZATION
+# ====================================================
+
+tokens = word_tokenize(text)
+
+print("\nTokenized Words:\n")
+
+print(tokens)
+
+
+
+# ====================================================
+# b) COUNT WORD FREQUENCY
+# ====================================================
+
+frequency = Counter(tokens)
+
+print("\nWord Frequency:\n")
+
+print(frequency)
+
+
+
+# ====================================================
+# c) REMOVE STOP WORDS
+# ====================================================
+
+stop_words = set(stopwords.words('english'))
+
+filtered_words = []
+
+
+for word in tokens:
+
+    if word.lower() not in stop_words:
+
+        filtered_words.append(word)
+
+
+print("\nAfter Removing Stop Words:\n")
+
+print(filtered_words)
+
+
+
+# ====================================================
+# d) POS TAGGING
+# ====================================================
+
+pos = pos_tag(tokens)
+
+print("\nPOS Tagging:\n")
+
+print(pos)
