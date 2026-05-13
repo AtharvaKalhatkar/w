@@ -1,0 +1,238 @@
+==========================
+1) CREATE PROJECT
+==========================
+
+ng new user-app
+
+cd user-app
+
+ng serve
+
+
+==========================
+2) CREATE COMPONENTS
+==========================
+
+ng generate component register
+
+ng generate component login
+
+ng generate component profile
+
+
+==========================
+3) app.routes.ts
+==========================
+
+import { Routes } from '@angular/router';
+
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
+
+export const routes: Routes = [
+
+  { path: '', component: RegisterComponent },
+
+  { path: 'login', component: LoginComponent },
+
+  { path: 'profile', component: ProfileComponent }
+
+];
+
+
+==========================
+4) app.component.html
+==========================
+
+<h1>Angular User App</h1>
+
+<a routerLink="">Register</a> |
+<a routerLink="/login">Login</a> |
+<a routerLink="/profile">Profile</a>
+
+<hr>
+
+<router-outlet></router-outlet>
+
+
+==========================
+5) register.component.ts
+==========================
+
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+@Component({
+  selector: 'app-register',
+  standalone: true,
+  imports: [FormsModule],
+  templateUrl: './register.component.html'
+})
+
+export class RegisterComponent {
+
+  name = '';
+  email = '';
+
+  register() {
+
+    localStorage.setItem('name', this.name);
+
+    localStorage.setItem('email', this.email);
+
+    alert('User Registered');
+
+  }
+
+}
+
+
+==========================
+6) register.component.html
+==========================
+
+<h2>Register User</h2>
+
+<input type="text"
+placeholder="Enter Name"
+[(ngModel)]="name">
+
+<br><br>
+
+<input type="email"
+placeholder="Enter Email"
+[(ngModel)]="email">
+
+<br><br>
+
+<button (click)="register()">
+Register
+</button>
+
+
+==========================
+7) login.component.ts
+==========================
+
+import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+@Component({
+  selector: 'app-login',
+  standalone: true,
+  imports: [FormsModule],
+  templateUrl: './login.component.html'
+})
+
+export class LoginComponent {
+
+  email = '';
+
+  login() {
+
+    let storedEmail =
+    localStorage.getItem('email');
+
+    if(this.email == storedEmail){
+
+      alert('Login Successful');
+
+    }
+
+    else{
+
+      alert('Invalid User');
+
+    }
+
+  }
+
+}
+
+
+==========================
+8) login.component.html
+==========================
+
+<h2>Login User</h2>
+
+<input type="email"
+placeholder="Enter Email"
+[(ngModel)]="email">
+
+<br><br>
+
+<button (click)="login()">
+Login
+</button>
+
+
+==========================
+9) profile.component.ts
+==========================
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-profile',
+  standalone: true,
+  templateUrl: './profile.component.html'
+})
+
+export class ProfileComponent {
+
+  name = localStorage.getItem('name');
+
+  email = localStorage.getItem('email');
+
+}
+
+
+==========================
+10) profile.component.html
+==========================
+
+<h2>User Profile</h2>
+
+<p>Name : {{name}}</p>
+
+<p>Email : {{email}}</p>
+
+
+==========================
+11) app.config.ts
+==========================
+
+import { ApplicationConfig }
+from '@angular/core';
+
+import { provideRouter }
+from '@angular/router';
+
+import { routes } from './app.routes';
+
+export const appConfig:
+ApplicationConfig = {
+
+  providers: [provideRouter(routes)]
+
+};
+
+
+==========================
+12) RUN PROJECT
+==========================
+
+ng serve
+
+
+==========================
+13) OUTPUT
+==========================
+
+Register User
+↓
+Login User
+↓
+Profile Shows Data
